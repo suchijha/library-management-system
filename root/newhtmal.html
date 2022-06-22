@@ -1,0 +1,101 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Form</title>
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+  <script>
+	$().ready(function(){
+          
+		  $("#signupForm").validate({
+			// in 'rules' user have to specify all the constraints for respective fields
+		  rules : {
+		  firstname : "required",
+		  lastname : "required",
+		  username : {
+		  required : true,
+		  minlength : 2  //for length of lastname
+		  },
+		  password : {
+		  required : true,
+		  minlength : 5
+		  },
+		  confirm_password : {
+		  required : true,
+		  minlength : 5,
+		  equalTo : "#password" //for checking both passwords are same or not
+		  },
+		  email : {
+		  required : true,
+		  email : true
+		  },
+		  agree : "required"
+		  },
+			  // in 'messages' user have to specify message as per rules
+		  messages : {
+		  firstname : "Please enter your firstname",
+		  lastname : "Please enter your lastname",
+		  username :{
+		  required : "Please enter a username",
+		  minlength : "Your username must consist of at least 2 characters"
+		  },
+		  password : {
+		  required : "Please enter a password",
+		  minlength : "Your password must be consist of at least 5 characters"
+		  },
+		  confirm_password : {
+		  required : "Please enter a password",
+		  minlength : "Your password must be consist of at least 5 characters",
+		  equalTo : "Please enter the same password as above"
+		  },
+		  agree : "Please accept our policy"
+		  }
+		  });
+		  });
+	 
+  </script>
+</head>
+  <body>
+    <!-- Body of Form starts -->
+  	<div class="container">
+      <form method="post" id=signupForm autocomplete="on">
+        <!--First name-->
+    		
+          <label for="firstName" class=" fontLabel"> First Name: </label>
+    	
+            <i class="fa fa-user" aria-hidden="true"></i>
+          
+    			
+    			<div>	<input type="text" name="firstname" placeholder="First Name" id="firstname"
+              class="textBox" autofocus="on" required></div>
+    			
+    			
+    		
+    		<!--First name-->
+
+
+    		<!---Gender--->
+
+
+    		<!--Terms and Conditions------>
+    		
+    		<!--Terms and Conditions------>
+
+
+
+    		<!---Submit Button------>
+    		<div class="box" style="background: #2d3e3f">
+    				<input type="Submit" name="Submit" class="submit" value="SUBMIT">
+			</div>
+			</form>
+			</div>
+    		<!---Submit Button----->
+     
+  
+  <!--Body of Form ends--->
+  </body>
+</html>
